@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { CatalogueService } from '../app/catalogue.service'
 @Component({
@@ -8,7 +9,8 @@ import { CatalogueService } from '../app/catalogue.service'
 })
 export class AppComponent implements OnInit {
   categories:any;
-  constructor(private catService: CatalogueService){}
+  currentCategorie;
+  constructor(private catService: CatalogueService, private router: Router){}
 
   ngOnInit(): void {
     this.getCategories();
@@ -22,6 +24,11 @@ export class AppComponent implements OnInit {
         console.log(error)
        }
      )
+  }
+
+  getProductByCat(c){
+    this.currentCategorie = c;
+    this.router.navigateByUrl("/products/2/"+c.id);
   }
 
 }

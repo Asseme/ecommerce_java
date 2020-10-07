@@ -45,6 +45,7 @@ public class EcommerceApplication implements CommandLineRunner {
 				p.setSelected(rnd.nextBoolean());
 				p.setPhotoName("unknown.png");
 				p.setCategory(c);
+				p.setDescription(RandomString.make(18));
 				productRepository.save(p);
 			}
 				

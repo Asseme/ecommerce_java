@@ -7,9 +7,18 @@
         <table>
           <tr>
             <td>
-              <img height="100%"  src="{{this.catalogueService.host+'/photoProduct/'+p.id}}" alt="">
+              <img height="100"  src="{{this.catalogueService.host+'/photoProduct/'+p.id}}" alt="">
             </td>
           </tr>
+          <tr>
+            <td></td>
+            <td>{{p.description}}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>{{p.currentPrice|number:'0.2'}}</td>
+          </tr>
+
         </table>
       </div>
     </div>
